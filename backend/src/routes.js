@@ -3,7 +3,7 @@ const OrderController = require("./Controllers/OrderController");
 
 const router = Router();
 
-
+router.get("/", (req,res) => res.send("OK"));
 router.get("/orders", OrderController.index);
 router.post("/orders", OrderController.store)
 router.patch("/orders/:id/status", OrderController.update)

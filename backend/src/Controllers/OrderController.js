@@ -13,6 +13,7 @@ class OrderController {
           return response.sendStatus(400)
        }
        const order = await Order.create({table,description});
+       request.io.emit('newOrder', order);
        response.json(order)
     }
 
@@ -32,6 +33,7 @@ class OrderController {
                 {new: true, runValidators: true},
             
             );
+            request.io.emit('statusChange', order);
             response.json(order);
         } catch (error) {
             response.sendStatus(500);
