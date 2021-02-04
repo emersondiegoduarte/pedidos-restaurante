@@ -8,7 +8,13 @@ const app = express();
 const cors = require("cors");
 const port = process.env.PORT || 3001;
 
-mongoose.connect('mongodb://localhost:27017/pedidos-restaurante', {
+// mongoose.connect('mongodb+srv://diegodias:melinda2904@cluster0.jg2sm.mongodb.net/test', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false
+// })
+
+mongoose.connect('mongodb://mongo:27017/pedidos-restaurante', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
